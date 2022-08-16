@@ -1,0 +1,9 @@
+{
+  "applicationTitle": "UShell Demo Application",
+  "ciConfigUrl": "demoapp.ci.json",
+  "legalAgreementMdUrl": "readme.md",
+  "moduleDescriptionUrls": [
+    "./UShellModule/module.json"
+  ],
+  "intialRuntimeTags": ["DEVMODE"]
+}
