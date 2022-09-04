@@ -79,7 +79,7 @@ function TestComponent(input) {
 
 export function DefineElement() {
   console.log("defining demo-component1");
-  customElements.define("demo-component1", DemoComponent1);
+  // customElements.define("demo-component1", DemoComponent1);
 
 }
 

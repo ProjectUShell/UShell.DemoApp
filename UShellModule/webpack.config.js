@@ -46,7 +46,9 @@ module.exports = {
       remotes: {},
       exposes: {
         "./DemoComponent": "./src/components/DemoComponent.jsx",
-        "./DemoComponent1": "./src/components/DemoComponent1.jsx"
+        "./DemoComponent1": "./src/components/DemoComponent1.jsx",
+        "./Exercises": "./src/components/Exercises.jsx",
+        "./Workout": "./src/components/Workout.jsx",
       },
       shared: {
         ...deps,
