@@ -10,7 +10,9 @@ import {
 import { Breadcrumb, Layout, Menu } from "antd";
 import Exercises from "./Exercises";
 import Workout from "./Workout";
-import "./TopMenuLayout.css"
+import "./TopMenuLayout.css";
+import EmployeeList from "./Employees/EmployeeList";
+import EmployeeDetails from "./Employees/EmployeeDetails";
 const { Header, Content, Footer } = Layout;
 
 const TopMenuLayout = () => {
@@ -24,15 +26,20 @@ const TopMenuLayout = () => {
     navigate("/workout");
   };
 
+  const goToEmployees = () => {
+    navigate("/employees");
+  };
+
   const goToKey = (key) => {
-    
+    console.log("key",key);
     if (key.key == 1) {
-      console.log(key);
       goToExercices();
     }
     if (key.key == 2) {
-      console.log(key);
       goToWorkout();
+    }
+    if (key.key == 3) {
+      goToEmployees();
     }
   };
 
@@ -43,7 +50,7 @@ const TopMenuLayout = () => {
         <Menu
           theme="dark"
           mode="horizontal"
-          defaultSelectedKeys={["2"]}
+          defaultSelectedKeys={["1"]}
           items={[
             {
               key: 1,
@@ -52,6 +59,10 @@ const TopMenuLayout = () => {
             {
               key: 2,
               label: "Workout",
+            },
+            {
+              key: 3,
+              label: "Employees",
             },
           ]}
           onClick={goToKey}
@@ -74,9 +85,19 @@ const TopMenuLayout = () => {
               element={<Workout />}
               // element={<SideBar contentElement={<MyDay />}></SideBar>}
             />
+            <Route
+              path="/employees"
+              element={<EmployeeList />}
+              // element={<SideBar contentElement={<MyDay />}></SideBar>}
+            />
+            <Route
+              path="/employees/:employeeKey"
+              element={<EmployeeDetails />}
+              // element={<SideBar contentElement={<MyDay />}></SideBar>}
+            />
           </Routes>
         </div>
-      </Content>     
+      </Content>
     </Layout>
   );
 };

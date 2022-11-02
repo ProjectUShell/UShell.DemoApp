@@ -49,6 +49,8 @@ module.exports = {
         "./DemoComponent1": "./src/components/DemoComponent1.jsx",
         "./Exercises": "./src/components/Exercises.jsx",
         "./Workout": "./src/components/Workout.jsx",
+        "./EmployeeList": "./src/components/Employees/EmployeeList.jsx",
+        "./EmployeeDetails": "./src/components/Employees/EmployeeDetails.jsx"
       },
       shared: {
         ...deps,
