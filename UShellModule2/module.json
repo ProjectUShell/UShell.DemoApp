@@ -1,0 +1,70 @@
+{
+  "moduleUid": "1B6CB9E8-4D5C-8481-3333-DA95321A817F",
+  "moduleTitle":"UShell Demo-Module",
+  "moduleScopingKey":"ushell-demo",
+  "workspaces":[
+    {
+      "workspaceKey": "{M}-travel",
+      "iconName": "pi pi-tags",
+      "defaultStaticUseCaseKeys":[ "{M}-flights-list" ],
+      "isSidebar": false
+    }
+  ],
+  "useCases": [
+    {
+      "useCaseKey":"{M}-flights-list",
+      "title": "Flüge (Lufthansa)",
+      "singletonActionkey":"{UseCaseKey}",
+      "widget": "./UiComponents/flightoverview.component",
+      "widgetArguments":{
+        "filter":"Lufthansa",
+       }
+    },
+    {
+      "useCaseKey":"{M}-flightdetails",
+      "title": "Flug #{flightId}",
+      "singletonActionkey":"{UseCaseKey}",
+      "widget": "./UiComponents/flightdetails.component",
+      "widgetArguments":{
+        "flightId":"{flightIdParameterDerFallsNichtÜberCommandGelifertWirdDannPerPopupAngefordertWird}",
+       }
+    }
+  ],
+  "commands":[
+    {
+      "uniqueCommandKey":"{M}-showflightsoverview",
+      "label": "Flüge",
+      "description": null,
+      "iconKey":"pi pi-tag",
+      "commandType":"activate-workspace",
+      "targetWorkspacePath": "{M}-travel",
+      "requiredRuntimeTagsForAvailability": [],
+      "requiredRuntimeTagsForVisibility": ["devmode"],
+      "checkedRepresentingRuntimeTag": null,
+      "locateAfterCommand": null,
+      "locationPriority": 100,
+      "menuOwnerUseCaseKey":"global",
+      "menuFolder":"Reiseplanung"
+    },
+    {
+      "uniqueCommandKey":"{M}-showflightdetails",
+      "label": "Details...",
+      "semantic": "primray",
+      "description": null,
+      "iconKey":"pi pi-tag",
+      "iconKeyChecked": null,
+      "WarningToConfirm": null,
+      "commandType":"start-usecase",
+      "targetUseCaseKey":"{M}-flightdetails",
+      "targetWorkspacePath": "{M}-travel",
+      "useCaseArgumentMapping":{ "flightId": "{propertyAmMenuOwnerUseCase}"},
+      "requiredRuntimeTagsForAvailability": [],
+      "requiredRuntimeTagsForVisibility": ["devmode"],
+      "checkedRepresentingRuntimeTag": null,
+      "locateAfterCommand": null,
+      "locationPriority": 100,
+      "menuOwnerUseCaseKey":"{M}flights-list",
+      "menuFolder":null
+    }
+  ]
+}

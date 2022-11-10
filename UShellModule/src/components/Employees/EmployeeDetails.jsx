@@ -1,9 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-const EmployeeDetails = () => {
+const EmployeeDetails = ({inputData}) => {
+
   const params = useParams();
-  const employeeKey = params.employeeKey;
+  const employeeKey = (inputData?.input ? inputData?.input : params.employeeKey);  
 
   const data = [
     {
@@ -30,8 +31,7 @@ const EmployeeDetails = () => {
   ];
 
   const employee = data.find((p) => p.key == employeeKey);
-  console.log("employee", employee);
-  console.log("employeeKey", employeeKey);
+ 
   return (
     <>
       <div>{employee?.name}</div>

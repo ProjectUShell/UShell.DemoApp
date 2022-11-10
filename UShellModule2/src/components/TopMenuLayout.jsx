@@ -8,33 +8,32 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 import { Breadcrumb, Layout, Menu } from "antd";
-import Exercises from "./Exercises";
-import Workout from "./Workout";
+
 import "./TopMenuLayout.css";
-import EmployeeList from "./Employees/EmployeeList";
-import PaymentList from "./Payments/PaymentList";
-import EmployeeDetails from "./Employees/EmployeeDetails";
+import ProductList from "./Products/ProductList";
+import TransactionList from "./Transactions/TransactionList";
+import ProductDetails from "./Products/ProductDetails";
 const { Header, Content, Footer } = Layout;
 
 const TopMenuLayout = () => {
   const navigate = useNavigate();
 
-  const goToPayments = () => {
-    navigate("/payments");
+  const goToTransactions = () => {
+    navigate("/transactions");
   };
 
-  const goToEmployees = () => {
-    navigate("/employees");
+  const goToProducts = () => {
+    navigate("/products");
   };
 
   const goToKey = (key) => {
     console.log("key", key);
 
-    if (key.key == 2) {
-      goToPayments();
+    if (key.key == 1) {
+      goToTransactions();
     }
-    if (key.key == 3) {
-      goToEmployees();
+    if (key.key == 2) {
+      goToProducts();
     }
   };
 
@@ -48,12 +47,12 @@ const TopMenuLayout = () => {
           defaultSelectedKeys={["1"]}
           items={[
             {
-              key: 2,
-              label: "Payments",
+              key: 1,
+              label: "Transactions",
             },
             {
-              key: 3,
-              label: "Employees",
+              key: 2,
+              label: "Products",
             },
           ]}
           onClick={goToKey}
@@ -67,18 +66,18 @@ const TopMenuLayout = () => {
         <div className="site-layout-content">
           <Routes>
             <Route
-              path="/payments"
-              element={<PaymentList />}
+              path="/transactions"
+              element={<TransactionList />}
               // element={<SideBar contentElement={<MyDay />}></SideBar>}
             />
             <Route
-              path="/employees"
-              element={<EmployeeList />}
+              path="/products"
+              element={<ProductList />}
               // element={<SideBar contentElement={<MyDay />}></SideBar>}
             />
             <Route
-              path="/employees/:employeeKey"
-              element={<EmployeeDetails />}
+              path="/products/:productKey"
+              element={<ProductDetails />}
               // element={<SideBar contentElement={<MyDay />}></SideBar>}
             />
           </Routes>

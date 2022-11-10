@@ -2,14 +2,14 @@ import { Button, Space, Table, Tag } from "antd";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const EmployeeList = ({ inputData }) => {
+const ProductList = ({ inputData }) => {
   const navigate = useNavigate();
 
-  const editEmployee = (employeeKey) => {
+  const editProduct = (productKey) => {
     if (inputData?.executeCommand) {
-      inputData.executeCommand("ShowEmployeeDetails", employeeKey);
+      inputData.executeCommand("ShowProductDetails", productKey);
     } else {
-      navigate(`../employees/${employeeKey}`);
+      navigate(`../products/${productKey}`);
     }
   };
 
@@ -21,14 +21,14 @@ const EmployeeList = ({ inputData }) => {
       render: (text) => <a>{text}</a>,
     },
     {
-      title: "Age",
-      dataIndex: "age",
-      key: "age",
+      title: "Size",
+      dataIndex: "size",
+      key: "size",
     },
     {
-      title: "Address",
-      dataIndex: "address",
-      key: "address",
+      title: "Origin",
+      dataIndex: "origin",
+      key: "origin",
     },
     {
       title: "Tags",
@@ -38,7 +38,7 @@ const EmployeeList = ({ inputData }) => {
         <>
           {tags.map((tag) => {
             let color = tag.length > 5 ? "geekblue" : "green";
-            if (tag === "angry") {
+            if (tag === "expensive") {
               color = "volcano";
             }
             return (
@@ -55,7 +55,7 @@ const EmployeeList = ({ inputData }) => {
       key: "action",
       render: (_, record) => (
         <Space size="middle">
-          <Button onClick={(e) => editEmployee(record.key)}>Edit</Button>
+          <Button onClick={(e) => editProduct(record.key)}>Edit</Button>
         </Space>
       ),
     },
@@ -63,28 +63,28 @@ const EmployeeList = ({ inputData }) => {
   const data = [
     {
       key: "1",
-      name: "John Brown",
-      age: 32,
-      address: "New York No. 1 Lake Park",
-      tags: ["nice", "developer"],
+      name: "Apple",
+      size: 32,
+      origin: "Germany",
+      tags: ["tasty", "round"],
     },
     {
       key: "2",
-      name: "Jim Green",
-      age: 42,
-      address: "London No. 1 Lake Park",
-      tags: ["angry"],
+      name: "Strawberry",
+      size: 42,
+      origin: "Netherlands",
+      tags: ["expensive"],
     },
     {
       key: "3",
-      name: "Joe Black",
-      age: 32,
-      address: "Sidney No. 1 Lake Park",
-      tags: ["cool", "teacher"],
+      name: "Banana",
+      size: 32,
+      origin: "Columbia",
+      tags: ["healthy", "weird"],
     },
   ];
 
   return <Table columns={columns} dataSource={data} />;
 };
 
-export default EmployeeList;
+export default ProductList;
