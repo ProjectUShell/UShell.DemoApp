@@ -6,8 +6,10 @@ const EmployeeList = ({ inputData }) => {
   const navigate = useNavigate();
 
   const editEmployee = (employeeKey) => {
-    if (inputData?.executeCommand) {
-      inputData.executeCommand("ShowEmployeeDetails", employeeKey);
+    if (inputData?.widgetHost?.fireEvent) {
+      inputData.widgetHost.fireEvent("ShowEmployeeDetails", {
+        employeeId: employeeKey,
+      });
     } else {
       navigate(`../employees/${employeeKey}`);
     }

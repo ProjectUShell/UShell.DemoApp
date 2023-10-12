@@ -4,7 +4,7 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const deps = require("./package.json").dependencies;
 module.exports = {
   output: {
-    publicPath: "",
+    publicPath: "http://localhost:3001/",
   },
 
   resolve: {
@@ -50,8 +50,10 @@ module.exports = {
         "./Exercises": "./src/components/Exercises.jsx",
         "./Workout": "./src/components/Workout.jsx",
         "./EmployeeList": "./src/components/Employees/EmployeeList.jsx",
+        "./Test": "./src/components/Employees/Test.jsx",
         "./EmployeeDetails": "./src/components/Employees/EmployeeDetails.jsx",
-        "./PaymentList": "./src/components/Payments/PaymentList.jsx"
+        "./PaymentList": "./src/components/Payments/PaymentList.jsx",
+        "./ValidationOverview": "./src/components/ValidationOverview.jsx"
       },
       shared: {
         ...deps,

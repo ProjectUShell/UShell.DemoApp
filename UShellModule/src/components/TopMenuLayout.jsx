@@ -14,6 +14,7 @@ import "./TopMenuLayout.css";
 import EmployeeList from "./Employees/EmployeeList";
 import PaymentList from "./Payments/PaymentList";
 import EmployeeDetails from "./Employees/EmployeeDetails";
+import ValidationOverview from "./ValidationOverview";
 const { Header, Content, Footer } = Layout;
 
 const TopMenuLayout = () => {
@@ -27,6 +28,10 @@ const TopMenuLayout = () => {
     navigate("/employees");
   };
 
+  const goToValidation = () => {
+    navigate("/validation");
+  };
+
   const goToKey = (key) => {
     console.log("key", key);
 
@@ -35,6 +40,9 @@ const TopMenuLayout = () => {
     }
     if (key.key == 3) {
       goToEmployees();
+    }
+    if (key.key == 4) {
+      goToValidation();
     }
   };
 
@@ -54,6 +62,10 @@ const TopMenuLayout = () => {
             {
               key: 3,
               label: "Employees",
+            },
+            {
+              key: 4,
+              label: "Validation",
             },
           ]}
           onClick={goToKey}
@@ -79,6 +91,11 @@ const TopMenuLayout = () => {
             <Route
               path="/employees/:employeeKey"
               element={<EmployeeDetails />}
+              // element={<SideBar contentElement={<MyDay />}></SideBar>}
+            />
+            <Route
+              path="/validation"
+              element={<ValidationOverview />}
               // element={<SideBar contentElement={<MyDay />}></SideBar>}
             />
           </Routes>
