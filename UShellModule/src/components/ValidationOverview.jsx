@@ -2,6 +2,8 @@ import React from "react";
 
 const ValidationOverview = ({ inputData }) => {
   const appScope = inputData.widgetHost.getApplicationScope();
+
+  console.log("inputData", inputData)
   return (
     <div>
       ValidationOverview
