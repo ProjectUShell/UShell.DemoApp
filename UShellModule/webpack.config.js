@@ -4,7 +4,8 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const deps = require("./package.json").dependencies;
 module.exports = {
   output: {
-    publicPath: "",
+    // publicPath: "http://localhost:3001/",
+    publicPath: "https://ushell.org/ushell-demomodule/"
   },
 
   resolve: {
@@ -53,7 +54,8 @@ module.exports = {
         "./Test": "./src/components/Employees/Test.jsx",
         "./EmployeeDetails": "./src/components/Employees/EmployeeDetails.jsx",
         "./PaymentList": "./src/components/Payments/PaymentList.jsx",
-        "./ValidationOverview": "./src/components/ValidationOverview.jsx"
+        "./ValidationOverview": "./src/components/ValidationOverview.jsx",
+        "./DropdownDemo": "./src/components/DropdownDemo.jsx"
       },
       shared: {
         ...deps,
