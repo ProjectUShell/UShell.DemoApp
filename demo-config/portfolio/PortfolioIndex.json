@@ -1,0 +1,17 @@
+[
+  {
+    "label": "Validation App Client A",
+    "portfolioUrl": "ValidationProfileClientA",
+    "tags": { "Tenant": "Client A", "Environment": "Test", "System": "Sim" }
+  },
+  {
+    "label": "Validation App Client B",
+    "portfolioUrl": "ValidationProfileClientB",
+    "tags": { "Tenant": "Client B", "Environment": "Test", "System": "Sim" }
+  },
+  {
+    "label": "Common Components Showcase",
+    "portfolioUrl": "CommonComponentsShowcase",
+    "tags": { "Tenant": "UShell" }
+  }
+]
