@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoBackend.BL", "src\DemoBackend.BL\DemoBackend.BL.csproj", "{C604C476-7D6E-46AE-A4E7-3928E6E8F7DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoBackend.Edmx", "src\DemoBackend.Edmx\DemoBackend.Edmx.csproj", "{827BDD27-C32B-4BB4-B6E4-6914C95CAE2D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "(model)", "(model)", "{3CF1B64A-AE2C-42DF-A97F-9C0ED9FA9384}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoBackend.WebAPI", "src\DemoBackend.WebAPI\DemoBackend.WebAPI.csproj", "{0C510B67-DA28-4787-BD81-B559104DF090}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{25D8FFA6-F06F-4745-BC89-58655714FA5A}"
+	ProjectSection(SolutionItems) = preProject
+		(tools)\kGEN.Readme.txt = (tools)\kGEN.Readme.txt
+		(tools)\kGEN.Sample.tt = (tools)\kGEN.Sample.tt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		NuGet|Any CPU = NuGet|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C604C476-7D6E-46AE-A4E7-3928E6E8F7DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C604C476-7D6E-46AE-A4E7-3928E6E8F7DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C604C476-7D6E-46AE-A4E7-3928E6E8F7DB}.NuGet|Any CPU.ActiveCfg = Debug|Any CPU
+		{C604C476-7D6E-46AE-A4E7-3928E6E8F7DB}.NuGet|Any CPU.Build.0 = Debug|Any CPU
+		{C604C476-7D6E-46AE-A4E7-3928E6E8F7DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C604C476-7D6E-46AE-A4E7-3928E6E8F7DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{827BDD27-C32B-4BB4-B6E4-6914C95CAE2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{827BDD27-C32B-4BB4-B6E4-6914C95CAE2D}.NuGet|Any CPU.ActiveCfg = Debug|Any CPU
+		{827BDD27-C32B-4BB4-B6E4-6914C95CAE2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C510B67-DA28-4787-BD81-B559104DF090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C510B67-DA28-4787-BD81-B559104DF090}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C510B67-DA28-4787-BD81-B559104DF090}.NuGet|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C510B67-DA28-4787-BD81-B559104DF090}.NuGet|Any CPU.Build.0 = Debug|Any CPU
+		{0C510B67-DA28-4787-BD81-B559104DF090}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C510B67-DA28-4787-BD81-B559104DF090}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{827BDD27-C32B-4BB4-B6E4-6914C95CAE2D} = {3CF1B64A-AE2C-42DF-A97F-9C0ED9FA9384}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C110352C-A50E-43DD-B166-ABCCB5D09A5B}
+	EndGlobalSection
+EndGlobal

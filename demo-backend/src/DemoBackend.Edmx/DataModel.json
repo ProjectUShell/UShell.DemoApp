@@ -1,0 +1,471 @@
+{
+  "DescriptionFormat": "v1.0",
+  "TimestampUtc": "2023-12-03T00:00:00.0000000Z",
+  "SemanticVersion": "1.0.0",
+  "Entities": [
+    {
+      "Name": "Car",
+      "NamePlural": "Cars",
+      "InheritedEntityName": null,
+      "Summary": "",
+      "IsBlEntrypoint": false,
+      "PrimaryKeyIndexName": "PK_Cars",
+      "Indices": [
+        {
+          "Name": "PK_Cars",
+          "Unique": true,
+          "MemberFieldNames": [
+            "LicPlateId"
+          ]
+        },
+        {
+          "Name": "FK_Cars__ParkingLocation",
+          "Unique": false,
+          "MemberFieldNames": [
+            "ParkingLocationUid"
+          ]
+        },
+        {
+          "Name": "FK_Cars__Tenant",
+          "Unique": false,
+          "MemberFieldNames": [
+            "TenantUid"
+          ]
+        }
+      ],
+      "Fields": [
+        {
+          "Name": "LicPlateId",
+          "Type": "String",
+          "MaxLength": 0,
+          "Summary": "",
+          "SystemInternal": false,
+          "FixedAfterCreation": false,
+          "SetabilityFlags": 7,
+          "ContentConcern": null,
+          "IdentityLabel": false,
+          "Filterable": 1,
+          "Required": true,
+          "DefaultValue": null,
+          "DbGeneratedIdentity": false
+        },
+        {
+          "Name": "ParkingLocationUid",
+          "Type": "Int64",
+          "MaxLength": 0,
+          "Summary": "",
+          "SystemInternal": false,
+          "FixedAfterCreation": false,
+          "SetabilityFlags": 7,
+          "ContentConcern": null,
+          "IdentityLabel": false,
+          "Filterable": 1,
+          "Required": false,
+          "DefaultValue": null,
+          "DbGeneratedIdentity": false
+        },
+        {
+          "Name": "Model",
+          "Type": "String",
+          "MaxLength": 0,
+          "Summary": "",
+          "SystemInternal": false,
+          "FixedAfterCreation": false,
+          "SetabilityFlags": 7,
+          "ContentConcern": null,
+          "IdentityLabel": false,
+          "Filterable": 2,
+          "Required": true,
+          "DefaultValue": null,
+          "DbGeneratedIdentity": false
+        },
+        {
+          "Name": "Color",
+          "Type": "String",
+          "MaxLength": 0,
+          "Summary": "",
+          "SystemInternal": false,
+          "FixedAfterCreation": false,
+          "SetabilityFlags": 7,
+          "ContentConcern": null,
+          "IdentityLabel": false,
+          "Filterable": 2,
+          "Required": true,
+          "DefaultValue": null,
+          "DbGeneratedIdentity": false
+        },
+        {
+          "Name": "TenantUid",
+          "Type": "Int64",
+          "MaxLength": 0,
+          "Summary": "",
+          "SystemInternal": false,
+          "FixedAfterCreation": false,
+          "SetabilityFlags": 7,
+          "ContentConcern": null,
+          "IdentityLabel": false,
+          "Filterable": 1,
+          "Required": true,
+          "DefaultValue": null,
+          "DbGeneratedIdentity": false
+        }
+      ]
+    },
+    {
+      "Name": "Driver",
+      "NamePlural": "Drivers",
+      "InheritedEntityName": null,
+      "Summary": "",
+      "IsBlEntrypoint": false,
+      "PrimaryKeyIndexName": "PK_Drivers",
+      "Indices": [
+        {
+          "Name": "FK__Cars_Car",
+          "Unique": false,
+          "MemberFieldNames": [
+            "CarLicPlateId"
+          ]
+        },
+        {
+          "Name": "PK_Drivers",
+          "Unique": true,
+          "MemberFieldNames": [
+            "CarLicPlateId",
+            "PersonUid"
+          ]
+        },
+        {
+          "Name": "FK_Drivers__Person",
+          "Unique": false,
+          "MemberFieldNames": [
+            "PersonUid"
+          ]
+        }
+      ],
+      "Fields": [
+        {
+          "Name": "CarLicPlateId",
+          "Type": "String",
+          "MaxLength": 0,
+          "Summary": "",
+          "SystemInternal": false,
+          "FixedAfterCreation": false,
+          "SetabilityFlags": 7,
+          "ContentConcern": null,
+          "IdentityLabel": false,
+          "Filterable": 1,
+          "Required": true,
+          "DefaultValue": null,
+          "DbGeneratedIdentity": false
+        },
+        {
+          "Name": "PersonUid",
+          "Type": "Int64",
+          "MaxLength": 0,
+          "Summary": "",
+          "SystemInternal": false,
+          "FixedAfterCreation": false,
+          "SetabilityFlags": 7,
+          "ContentConcern": null,
+          "IdentityLabel": false,
+          "Filterable": 1,
+          "Required": true,
+          "DefaultValue": null,
+          "DbGeneratedIdentity": false
+        },
+        {
+          "Name": "OwnsCarKeys",
+          "Type": "Boolean",
+          "MaxLength": 0,
+          "Summary": "",
+          "SystemInternal": false,
+          "FixedAfterCreation": false,
+          "SetabilityFlags": 7,
+          "ContentConcern": null,
+          "IdentityLabel": false,
+          "Filterable": 1,
+          "Required": true,
+          "DefaultValue": null,
+          "DbGeneratedIdentity": false
+        }
+      ]
+    },
+    {
+      "Name": "ParkingLocation",
+      "NamePlural": "ParkingLocations",
+      "InheritedEntityName": null,
+      "Summary": "",
+      "IsBlEntrypoint": false,
+      "PrimaryKeyIndexName": "PK_ParkingLocations",
+      "Indices": [
+        {
+          "Name": "PK_ParkingLocations",
+          "Unique": true,
+          "MemberFieldNames": [
+            "Uid"
+          ]
+        },
+        {
+          "Name": "FK_ParkingLocations__Tenant",
+          "Unique": false,
+          "MemberFieldNames": [
+            "TenantUid"
+          ]
+        }
+      ],
+      "Fields": [
+        {
+          "Name": "Uid",
+          "Type": "Int64",
+          "MaxLength": 0,
+          "Summary": "",
+          "SystemInternal": false,
+          "FixedAfterCreation": false,
+          "SetabilityFlags": 7,
+          "ContentConcern": null,
+          "IdentityLabel": false,
+          "Filterable": 1,
+          "Required": true,
+          "DefaultValue": null,
+          "DbGeneratedIdentity": false
+        },
+        {
+          "Name": "Address",
+          "Type": "String",
+          "MaxLength": 0,
+          "Summary": "",
+          "SystemInternal": false,
+          "FixedAfterCreation": false,
+          "SetabilityFlags": 7,
+          "ContentConcern": null,
+          "IdentityLabel": false,
+          "Filterable": 2,
+          "Required": true,
+          "DefaultValue": null,
+          "DbGeneratedIdentity": false
+        },
+        {
+          "Name": "TenantUid",
+          "Type": "Int64",
+          "MaxLength": 0,
+          "Summary": "",
+          "SystemInternal": false,
+          "FixedAfterCreation": false,
+          "SetabilityFlags": 7,
+          "ContentConcern": null,
+          "IdentityLabel": false,
+          "Filterable": 1,
+          "Required": true,
+          "DefaultValue": null,
+          "DbGeneratedIdentity": false
+        }
+      ]
+    },
+    {
+      "Name": "Tenant",
+      "NamePlural": "Tenants",
+      "InheritedEntityName": null,
+      "Summary": "",
+      "IsBlEntrypoint": false,
+      "PrimaryKeyIndexName": "PK_Tenants",
+      "Indices": [
+        {
+          "Name": "PK_Tenants",
+          "Unique": true,
+          "MemberFieldNames": [
+            "Uid"
+          ]
+        }
+      ],
+      "Fields": [
+        {
+          "Name": "Uid",
+          "Type": "Int64",
+          "MaxLength": 0,
+          "Summary": "",
+          "SystemInternal": false,
+          "FixedAfterCreation": false,
+          "SetabilityFlags": 7,
+          "ContentConcern": null,
+          "IdentityLabel": false,
+          "Filterable": 1,
+          "Required": true,
+          "DefaultValue": null,
+          "DbGeneratedIdentity": false
+        }
+      ]
+    },
+    {
+      "Name": "Person",
+      "NamePlural": "Persons",
+      "InheritedEntityName": null,
+      "Summary": "",
+      "IsBlEntrypoint": false,
+      "PrimaryKeyIndexName": "PK_Persons",
+      "Indices": [
+        {
+          "Name": "PK_Persons",
+          "Unique": true,
+          "MemberFieldNames": [
+            "Uid"
+          ]
+        },
+        {
+          "Name": "FK_Persons__Tenant",
+          "Unique": false,
+          "MemberFieldNames": [
+            "TenantUid"
+          ]
+        }
+      ],
+      "Fields": [
+        {
+          "Name": "Uid",
+          "Type": "Int64",
+          "MaxLength": 0,
+          "Summary": "",
+          "SystemInternal": false,
+          "FixedAfterCreation": false,
+          "SetabilityFlags": 7,
+          "ContentConcern": null,
+          "IdentityLabel": false,
+          "Filterable": 1,
+          "Required": true,
+          "DefaultValue": null,
+          "DbGeneratedIdentity": false
+        },
+        {
+          "Name": "FirstName",
+          "Type": "String",
+          "MaxLength": 0,
+          "Summary": "",
+          "SystemInternal": false,
+          "FixedAfterCreation": false,
+          "SetabilityFlags": 7,
+          "ContentConcern": null,
+          "IdentityLabel": false,
+          "Filterable": 2,
+          "Required": true,
+          "DefaultValue": null,
+          "DbGeneratedIdentity": false
+        },
+        {
+          "Name": "LastName",
+          "Type": "String",
+          "MaxLength": 0,
+          "Summary": "",
+          "SystemInternal": false,
+          "FixedAfterCreation": false,
+          "SetabilityFlags": 7,
+          "ContentConcern": null,
+          "IdentityLabel": false,
+          "Filterable": 2,
+          "Required": true,
+          "DefaultValue": null,
+          "DbGeneratedIdentity": false
+        },
+        {
+          "Name": "TenantUid",
+          "Type": "Int64",
+          "MaxLength": 0,
+          "Summary": "",
+          "SystemInternal": false,
+          "FixedAfterCreation": false,
+          "SetabilityFlags": 7,
+          "ContentConcern": null,
+          "IdentityLabel": false,
+          "Filterable": 1,
+          "Required": true,
+          "DefaultValue": null,
+          "DbGeneratedIdentity": false
+        }
+      ]
+    }
+  ],
+  "Relations": [
+    {
+      "Name": "CarDriver",
+      "PrimaryEntityName": "Car",
+      "ForeignEntityName": "Driver",
+      "ForeignKeyIndexName": "FK__Cars_Car",
+      "IsLookupRelation": false,
+      "PrimaryEntityIsOptional": false,
+      "ForeignEntityIsMultiple": true,
+      "PrimaryNavigationName": "Drivers",
+      "ForeignNavigationName": "Car",
+      "PrimaryNavigationSummary": "",
+      "ForeignNavigationSummary": "",
+      "CascadeDelete": true
+    },
+    {
+      "Name": "ParkingLocationCar",
+      "PrimaryEntityName": "ParkingLocation",
+      "ForeignEntityName": "Car",
+      "ForeignKeyIndexName": "FK_Cars__ParkingLocation",
+      "IsLookupRelation": true,
+      "PrimaryEntityIsOptional": true,
+      "ForeignEntityIsMultiple": true,
+      "PrimaryNavigationName": "",
+      "ForeignNavigationName": "ParkingLocation",
+      "PrimaryNavigationSummary": "",
+      "ForeignNavigationSummary": "",
+      "CascadeDelete": false
+    },
+    {
+      "Name": "TenantCar",
+      "PrimaryEntityName": "Tenant",
+      "ForeignEntityName": "Car",
+      "ForeignKeyIndexName": "FK_Cars__Tenant",
+      "IsLookupRelation": true,
+      "PrimaryEntityIsOptional": false,
+      "ForeignEntityIsMultiple": true,
+      "PrimaryNavigationName": "",
+      "ForeignNavigationName": "Tenant",
+      "PrimaryNavigationSummary": "",
+      "ForeignNavigationSummary": "",
+      "CascadeDelete": false
+    },
+    {
+      "Name": "PersonDriver",
+      "PrimaryEntityName": "Person",
+      "ForeignEntityName": "Driver",
+      "ForeignKeyIndexName": "FK_Drivers__Person",
+      "IsLookupRelation": true,
+      "PrimaryEntityIsOptional": false,
+      "ForeignEntityIsMultiple": true,
+      "PrimaryNavigationName": "",
+      "ForeignNavigationName": "Person",
+      "PrimaryNavigationSummary": "",
+      "ForeignNavigationSummary": "",
+      "CascadeDelete": false
+    },
+    {
+      "Name": "TenantParkingLocation",
+      "PrimaryEntityName": "Tenant",
+      "ForeignEntityName": "ParkingLocation",
+      "ForeignKeyIndexName": "FK_ParkingLocations__Tenant",
+      "IsLookupRelation": true,
+      "PrimaryEntityIsOptional": false,
+      "ForeignEntityIsMultiple": true,
+      "PrimaryNavigationName": "",
+      "ForeignNavigationName": "Tenant",
+      "PrimaryNavigationSummary": "",
+      "ForeignNavigationSummary": "",
+      "CascadeDelete": false
+    },
+    {
+      "Name": "TenantPerson",
+      "PrimaryEntityName": "Tenant",
+      "ForeignEntityName": "Person",
+      "ForeignKeyIndexName": "FK_Persons__Tenant",
+      "IsLookupRelation": true,
+      "PrimaryEntityIsOptional": false,
+      "ForeignEntityIsMultiple": true,
+      "PrimaryNavigationName": "",
+      "ForeignNavigationName": "Tenant",
+      "PrimaryNavigationSummary": "",
+      "ForeignNavigationSummary": "",
+      "CascadeDelete": false
+    }
+  ]
+}
