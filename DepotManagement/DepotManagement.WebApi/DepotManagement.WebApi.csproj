@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FUSE-fx.EntityAnnotations" Version="4.0.3" />
+    <PackageReference Include="FUSE-fx.ModelDescription" Version="2.0.10" />
+    <PackageReference Include="FUSE-fx.ModelReader" Version="0.1.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.17" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.3.10" />
+    <PackageReference Include="UJMW.DynamicController" Version="1.5.0" />
+    <PackageReference Include="UShell.PortfolioDescription" Version="0.2.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AccountManagement\AccountManagement.csproj" />
+    <ProjectReference Include="..\FundsManagement\FundsManagement.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="FUSE-fx.EfSupport">
+      <HintPath>..\..\..\FUSE-fx.RepositoryContract\dotnet\dist\bin-net6.0\FUSE-fx.EfSupport.dll</HintPath>
+    </Reference>
+    <Reference Include="FUSE-fx.RepositoryContract">
+      <HintPath>..\..\..\FUSE-fx.RepositoryContract\dotnet\dist\bin-net6.0\FUSE-fx.RepositoryContract.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Dynamic.Core">
+      <HintPath>..\..\..\FUSE-fx.DynDB-EF\vendor\nuget\System.Linq.Dynamic.Core.1.3.5\lib\net6.0\System.Linq.Dynamic.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
